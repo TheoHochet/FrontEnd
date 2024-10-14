@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "account",
+        "settings"
+      ]
+    }
+  }
+}

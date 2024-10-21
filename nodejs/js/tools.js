@@ -1,13 +1,12 @@
 const axios = require("axios");
 
 
-function getstrapi(category, name) {
+function getstrapi(category, name, cat) {
 
-    name = name.toLowerCase()
+    name = name.toLowerCase();
 
     // Fetch and filter articles
     const url = 'http://localhost:1337/api/' + category; // Adjust the URL based on your Strapi setup
-
 
     return axios.get(url, {
     headers: {
@@ -21,7 +20,7 @@ function getstrapi(category, name) {
 
         // Filter articles where 'Name' matches 'MCDO' (case-insensitive)
         const filteredArticles = articles.filter(article =>
-            article.Name.toLowerCase() === name
+            article[cat].toLowerCase() === name
         );
 
         // Send the filtered articles as the response
@@ -29,7 +28,7 @@ function getstrapi(category, name) {
     })
     .catch(error => {
         // If there's an error, return an error message with status code 500
-        res.statusCode = 500;
+        console.log(error);
         return null;
     });
 

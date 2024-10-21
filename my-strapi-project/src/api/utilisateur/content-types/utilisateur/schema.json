@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "utilisateurs",
+  "info": {
+    "singularName": "utilisateur",
+    "pluralName": "utilisateurs",
+    "displayName": "utilisateur",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "manager": {
+      "type": "boolean"
+    },
+    "group": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    }
+  }
+}

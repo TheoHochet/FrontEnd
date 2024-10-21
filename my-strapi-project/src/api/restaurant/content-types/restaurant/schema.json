@@ -16,12 +16,6 @@
     },
     "Desccription": {
       "type": "blocks"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "restaurants"
     }
   }
 }

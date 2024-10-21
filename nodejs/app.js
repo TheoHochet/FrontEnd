@@ -9,6 +9,7 @@ const port = 3000;
 app.use(express.static('public'));
 
 const indexRoute = require('./js/index');
+const loginRoute = require('./js/login');
 
 app.set('trust proxy', 1);
 
@@ -34,6 +35,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRoute);
+app.use('/', loginRoute);
 
 app.use((req, res, next) => { 
   // Read the HTML file

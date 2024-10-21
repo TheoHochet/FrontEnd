@@ -4,13 +4,15 @@ const tools = require('./tools');
 router = express.Router();
 
 
-router.get('/', async (req, res, next) => {
+router.get('/login', async (req, res, next) => {
 
-    const mcdo = (await tools.getstrapi('restaurants', 'MCDO', 'Name'))[0];
+    const user = (await tools.getstrapi('utilisateurs', 'user1@gmail.com', 'email'))[0];
+
+    console.log(user);
 
     res.render('index', {
         title: 'Moodly',
-        resto: mcdo,
+        user: user,
     });
 });
 

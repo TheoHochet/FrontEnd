@@ -11,7 +11,7 @@ function getstrapi(category, name, cat) {
     return axios.get(url, {
     headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ec13806587161d9b00d0c7b599a8dcb62c3c12f023168c63fa6dd310a1f04315f738bb93f899c43f43d713092fccb857d87c7198a0755f9bb51d9d3569aaa2fa368fab3afa99644ce5817bf7519b646c2cb42e338a12b89a02cce65da5c1b9af74dfac27d06e8369f8edfb4062a6c42d5be0886eef183e634e1b7f8705dff712` 
+        Authorization: `Bearer 27fcd4abb75ec0502390eafaa4dc3d2ec60edd8a19e4897d69a9c12c3b1c0a9e332e4e453fe3ba597b3ee6ad82133fd2224eb1e278bc219c5d551ccf00e967e5e781e05a9fd1133a13a977b451308b8129096e1e10fcc3106bca5b0f50e9ad823aea90d89af1bb6bf578cc3069f90a55b7b76eec4ff82a25f15e54ffc366cedd` 
     }
     })
     .then(response => {
@@ -45,7 +45,7 @@ function getstrapiall(category, name) {
     return axios.get(url, {
     headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ec13806587161d9b00d0c7b599a8dcb62c3c12f023168c63fa6dd310a1f04315f738bb93f899c43f43d713092fccb857d87c7198a0755f9bb51d9d3569aaa2fa368fab3afa99644ce5817bf7519b646c2cb42e338a12b89a02cce65da5c1b9af74dfac27d06e8369f8edfb4062a6c42d5be0886eef183e634e1b7f8705dff712` 
+        Authorization: `Bearer 27fcd4abb75ec0502390eafaa4dc3d2ec60edd8a19e4897d69a9c12c3b1c0a9e332e4e453fe3ba597b3ee6ad82133fd2224eb1e278bc219c5d551ccf00e967e5e781e05a9fd1133a13a977b451308b8129096e1e10fcc3106bca5b0f50e9ad823aea90d89af1bb6bf578cc3069f90a55b7b76eec4ff82a25f15e54ffc366cedd` 
     }
     })
     .then(response => {

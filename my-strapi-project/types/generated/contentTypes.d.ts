@@ -585,7 +585,7 @@ export interface ApiUtilisateurUtilisateur extends Struct.CollectionTypeSchema {
     manager: Schema.Attribute.Boolean;
     group: Schema.Attribute.String;
     Name: Schema.Attribute.String;
-    password: Schema.Attribute.Password;
+    password: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

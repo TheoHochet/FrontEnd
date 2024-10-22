@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './index.css'; // Assuming you have a CSS file for styling.
 
 // Function for employee login
@@ -32,15 +33,16 @@ async function employeeLogin(email, password) {
 }
 
 // Login component
-function Login({ onLogin }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Utilisation de useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const success = await employeeLogin(email, password);
     if (success) {
-      onLogin(); // Call parent function after successful login
+      navigate('/accueil'); // Redirection vers la page Accueil après une connexion réussie
     }
   };
 
@@ -89,5 +91,3 @@ function Login({ onLogin }) {
 }
 
 export default Login;
-
-

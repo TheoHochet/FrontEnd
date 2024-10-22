@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './index.css'; // Assuming you have a CSS file for styling.
 
-// Fonction pour le login de l'employé
+// Function for employee login
 async function employeeLogin(email, password) {
   try {
     const response = await fetch('http://localhost:1337/api/auth/local', {
@@ -18,52 +19,19 @@ async function employeeLogin(email, password) {
 
     if (data.jwt) {
       localStorage.setItem('token', data.jwt);
-      alert('Login réussi!');
+      alert('Login successful!');
       return true;
     } else {
-      alert('Erreur de login');
+      alert('Login error');
       return false;
     }
   } catch (error) {
-    console.error('Erreur lors du login:', error);
+    console.error('Login error:', error);
     return false;
   }
 }
 
-async function submitMood(mood) {
-  const token = localStorage.getItem('token');
-
-  if (!token) {
-    alert('Vous devez être connecté pour soumettre votre mood');
-    return;
-  }
-
-  try {
-    const response = await fetch('http://localhost:1337/api/moods', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`, // Utiliser le JWT pour l'authentification
-      },
-      body: JSON.stringify({
-        data: {
-          mood: mood,
-          employee: "employee_id_placeholder" // Remplacer par l'ID réel de l'employé
-        }
-      }),
-    });
-
-    if (response.ok) {
-      alert('Mood soumis avec succès');
-    } else {
-      alert('Erreur lors de la soumission du mood');
-    }
-  } catch (error) {
-    console.error('Erreur lors de la soumission du mood:', error);
-  }
-}
-
-// Composant Login
+// Login component
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -72,62 +40,54 @@ function Login({ onLogin }) {
     e.preventDefault();
     const success = await employeeLogin(email, password);
     if (success) {
-      onLogin();  // Appeler la fonction parent après le login réussi
+      onLogin(); // Call parent function after successful login
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <label htmlFor="password">Mot de passe:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Se connecter</button>
-    </form>
-  );
-}
-
-// Composant MoodInput
-function MoodInput() {
-  return (
-    <div id="moodSection">
-      <h3>Comment vous sentez-vous aujourd'hui ?</h3>
-      <div className="emoji-mood">
-        <span className="emoji" data-mood="😊" onClick={() => submitMood("😊")}>😊</span>
-        <span className="emoji" data-mood="😐" onClick={() => submitMood("😐")}>😐</span>
-        <span className="emoji" data-mood="😢" onClick={() => submitMood("😢")}>😢</span>
-        <span className="emoji" data-mood="😡" onClick={() => submitMood("😡")}>😡</span>
+    <div className="login-container">
+      <div className="login-card">
+        <div className="welcome-section">
+          <h2>Bienvenue</h2>
+          <p>"Bienvenue sur Moodly, votre allié pour un bien-être épanouissant au travail."</p>
+          <div className="logo">
+            {/* Add your logo here, can be an <img> tag */}
+          </div>
+        </div>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="matthieu.perret@hellowork.co"
+          />
+          <label htmlFor="password">Mot de passe:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="**********"
+          />
+          <div className="forgot-password">
+            <a href="#">Mot de passe oublié ?</a>
+          </div>
+          <button className="login-button" type="submit">Se connecter</button>
+        </form>
+        <div className="separator">Ou</div>
+        <button className="google-login-button">
+          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" />
+          Google
+        </button>
       </div>
     </div>
   );
 }
 
-// Composant principal App
-function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+export default Login;
 
-  return (
-    <div id="app">
-      {loggedIn ? (
-        <MoodInput />
-      ) : (
-        <Login onLogin={() => setLoggedIn(true)} />
-      )}
-    </div>
-  );
-}
-
-export default App;
 

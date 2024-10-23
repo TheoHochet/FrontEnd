@@ -197,102 +197,143 @@ input:focus {
   color: #777;
 }
 
-/* Search and Mood Section */
-.search-and-mood {
+.search-and-settings {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .search-bar {
-  flex: 1;
+  width: 85%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  margin-right: 10px;
 }
 
 .settings-button {
-  background-color: #fff;
+  background: none;
   border: none;
   font-size: 1.5em;
-  color: #777;
+  color: white;
   cursor: pointer;
 }
 
 .mood-test {
-  text-align: center;
+  width: 100%;
+  background-color: #4CAF50;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mood-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mood-text {
+  flex: 1;
+  text-align: left;
+}
+
+.mood-text h3 {
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+}
+
+.mood-text p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  margin: 10px 0;
 }
 
 .test-button {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
+  background-color: #155c17;
+  color: white;
   padding: 10px 20px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
-/* Weekly Statistics Section */
+.mood-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mood-icon {
+  width: 80px;
+  height: auto;
+}
+
 .weekly-stats {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .stats-cards {
   display: flex;
   justify-content: space-around;
-  margin-top: 15px;
+  gap: 20px;
 }
 
 .stats-card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
   flex: 1;
-  margin: 0 10px;
+  background-color: #4CAF50;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.stats-card p {
-  font-size: 1.5em;
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stats-value {
+  font-size: 2.5em;
+  font-weight: bold;
   margin: 0;
+  color: ;
 }
 
-.stats-card span {
-  color: #777;
-  font-size: 0.9em;
+.stats-label {
+  font-size: 1.1em;
+  color: #555;
 }
 
-/* Company Morale Section */
 .company-morale {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .morale-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-}
-
-.morale-header a {
-  color: #4CAF50;
-  text-decoration: none;
-  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .morale-list {
@@ -302,57 +343,34 @@ input:focus {
 
 .morale-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.morale-info h4 {
-  margin: 0;
-  font-size: 1.1em;
-}
-
-.morale-info p {
-  margin: 0;
-  color: #777;
-  font-size: 0.9em;
-}
-
-.morale-item a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-/* Bottom Navigation Section */
 .bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
   display: flex;
   justify-content: space-around;
+  width: 100%;
+  background-color: #ffffff;
   padding: 10px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ddd;
 }
 
 .nav-button {
-  background-color: transparent;
+  background: none;
   border: none;
+  font-size: 1em;
+  color: #777;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1em;
-  color: #777;
   cursor: pointer;
-}
-
-.nav-button svg {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+  transition: color 0.3s;
 }
 
 .nav-button:hover {

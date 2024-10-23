@@ -1,8 +1,14 @@
 import React from 'react';
-import '../index.js'; // Assurez-vous d'avoir un fichier CSS pour le style.
+import moodImage from './mood-image.png'; // Importation de l'image depuis le même dossier
 import { FaBell, FaHome, FaBars, FaHistory, FaUser } from 'react-icons/fa';
+import '../index.css'; // Importation du fichier CSS
 
-function Dashboard() {
+function Dashboard({ onSubmitMood }) {
+  const handleTestClick = () => {
+    // Logique pour le bouton "Faire le test"
+    console.log('Faire le test cliqué');
+  };
+
   return (
     <div className="dashboard-container">
       {/* Header Section */}
@@ -19,16 +25,29 @@ function Dashboard() {
         </div>
       </header>
 
-      {/* Search and Mood Section */}
-      <div className="search-and-mood">
+      {/* Search Section */}
+      <div className="search-and-settings">
         <input type="text" placeholder="Rechercher..." className="search-bar" />
         <button className="settings-button">
           <FaBars />
         </button>
-        <div className="mood-test">
-          <h3>Et aujourd'hui ?</h3>
-          <p>Comment vous sentez-vous ?</p>
-          <button className="test-button">Faire le test</button>
+      </div>
+
+       {/* Spacer Section */}
+    <div className="spacer"></div>
+
+    
+      {/* Mood Test Section */}
+      <div className="mood-test">
+        <div className="mood-content">
+          <div className="mood-text">
+            <h3>Et aujourd'hui ?</h3>
+            <p>Comment vous sentez-vous ?</p>
+            <button onClick={handleTestClick} className="test-button">Faire le test</button>
+          </div>
+          <div className="mood-image">
+            <img src={moodImage} alt="Moodly" className="mood-icon" />
+          </div>
         </div>
       </div>
 
@@ -37,16 +56,16 @@ function Dashboard() {
         <h3>Statistiques hebdomadaires</h3>
         <div className="stats-cards">
           <div className="stats-card">
-            <p>Bonne</p>
-            <span>Humeur globale</span>
+            <p className="stats-value">Bonne</p>
+            <span className="stats-label">Humeur globale</span>
           </div>
           <div className="stats-card">
-            <p>4</p>
-            <span>Tests effectués</span>
+            <p className="stats-value">4</p>
+            <span className="stats-label">Tests effectués</span>
           </div>
           <div className="stats-card">
-            <p>Stress</p>
-            <span>Point d'attention</span>
+            <p className="stats-value">Stress</p>
+            <span className="stats-label">Point d'attention</span>
           </div>
         </div>
       </div>
@@ -55,7 +74,6 @@ function Dashboard() {
       <div className="company-morale">
         <div className="morale-header">
           <h3>Le moral en entreprise</h3>
-          <a href="#">Voir plus</a>
         </div>
         <div className="morale-list">
           <div className="morale-item">
@@ -64,7 +82,6 @@ function Dashboard() {
               <h4>La fatigue</h4>
               <p>Un manque d'énergie causé par un repos insuffisant.</p>
             </div>
-            <a href="#">En savoir plus</a>
           </div>
           <div className="morale-item">
             <div className="morale-icon"> {/* Icône de stress */} </div>
@@ -72,7 +89,6 @@ function Dashboard() {
               <h4>Le stress</h4>
               <p>Une pression constante pouvant impacter la santé mentale.</p>
             </div>
-            <a href="#">En savoir plus</a>
           </div>
         </div>
       </div>

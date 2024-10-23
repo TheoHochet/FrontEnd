@@ -1,0 +1,134 @@
+/* FatigueFactor.css */
+
+.fatigue_factor_container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboard_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .profile_section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile_pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .profile_info h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .notification_section {
+    font-size: 1.5em;
+    color: #777;
+  }
+  
+  .search_and_settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search_bar {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .settings_button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #777;
+    cursor: pointer;
+  }
+  
+  .fatigue_test {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .fatigue_circle_container {
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .fatigue_circle {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .circular_chart {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  
+  .circle_bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke: #4CAF50;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s;
+  }
+  
+  .percentage {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+  }
+  
+  .validate_button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .validate_button:hover {
+    background-color: #45a049;
+  }
+  
+  .step_indicator {
+    font-size: 1em;
+    color: #777;
+  }
+  

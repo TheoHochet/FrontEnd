@@ -80,11 +80,6 @@ function Login() {
           </div>
           <button className="login-button" type="submit">Se connecter</button>
         </form>
-        <div className="separator">Ou</div>
-        <button className="google-login-button">
-          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" />
-          Google
-        </button>
       </div>
     </div>
   );
